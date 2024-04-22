@@ -1,31 +1,33 @@
-import { defineNuxtModule, addPlugin, createResolver, addServerHandler, addImports } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addServerHandler, addImports, installModule } from '@nuxt/kit'
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule'
+    name: 'wl-api-collections-module',
+    configKey: 'wl-api-collections-module'
   },
   // Default configuration options of the Nuxt module
   defaults: {},
-  setup (options, nuxt) {
+  async setup (options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    await installModule('@pinia/nuxt');
 
     addServerHandler({
       route: '/api/token',
-      handler: resolver.resolve('./runtime/server/api/token.post.ts'),
+      handler: resolver.resolve('./runtime/server/api/token.post'),
     });
 
     addServerHandler({
       route: '/api/reservation/departure',
-      handler: resolver.resolve('./runtime/server/api/reservation/departure.get.ts'),
+      handler: resolver.resolve('./runtime/server/api/reservation/departure.get'),
     });
 
     addServerHandler({
       route: '/api/reservation/destination',
-      handler: resolver.resolve('./runtime/server/api/reservation/destination.get.ts'),
+      handler: resolver.resolve('./runtime/server/api/reservation/destination.get'),
     });
 
     addImports({

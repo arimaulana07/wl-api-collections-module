@@ -5,6 +5,7 @@
 </template>
 
 <script setup>
+
 // const { data } = await useFetch('/api/token', {
 //   method: 'POST'
 // });

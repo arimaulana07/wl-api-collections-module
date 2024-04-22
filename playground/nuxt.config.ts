@@ -1,4 +1,8 @@
 export default defineNuxtConfig({
+  nitro: {
+    storage: {
+    }
+  },
   runtimeConfig: {
     baseApiUrl: '',
     trailingApiUrl: '',
@@ -6,7 +10,7 @@ export default defineNuxtConfig({
     clientId: '',
     clientSecret: '',
   },
-  modules: ['../src/module'],
+  modules: ['@sidebase/nuxt-session', '../src/module'],
   myModule: {},
   devtools: { enabled: true }
 })

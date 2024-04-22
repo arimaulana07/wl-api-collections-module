@@ -8,6 +8,11 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
+    "@sidebase/nuxt-session": "^0.2.7",
     "nuxt": "latest"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "pinia": "^2.1.7"
   }
 }
