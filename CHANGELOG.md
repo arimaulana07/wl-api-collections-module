@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v1.0.21
+
+[compare changes](https://github.com/arimaulana07/wl-api-collections-module/compare/v1.0.20...v1.0.21)
+
 ## v1.0.20
 
 [compare changes](https://github.com/arimaulana07/wl-api-collections-module/compare/v1.0.19...v1.0.20)
